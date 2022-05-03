@@ -35,7 +35,7 @@ class Games extends CI_Controller {
     public function store()
     {
         $game = $_POST;
-        $game['user-id'] = '1';
+        // $game['user-id'] = '1';
 
         $this->load->model('games_model');  
         // Importa de dentro de games_model o método/função store()

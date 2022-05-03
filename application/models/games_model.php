@@ -27,9 +27,7 @@
         public function update($id, $game)
         {
             $this->db->where("id", $id);
-            return $this->db->update("tb_games", $game);
-            print_r($game); exit;
-
+            $this->db->update("tb_games", $game);
         }
     }
 ?>
