@@ -29,5 +29,11 @@
             $this->db->where("id", $id);
             $this->db->update("tb_games", $game);
         }
+
+        public function destroy($id)
+        {
+            $this->db->where('id', $id);
+            $this->db->delete('tb_games');
+        }
     }
 ?>

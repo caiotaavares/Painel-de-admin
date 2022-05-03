@@ -2,11 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Games extends CI_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('games_model');
+    }
 	
 	public function index()
 	{
-		$this->load->model('games_model');
-
 		$data['games'] = $this->games_model->index(); 
 		$data['title'] = "Games - CodeIgniter";
 
@@ -35,9 +39,8 @@ class Games extends CI_Controller {
     public function store()
     {
         $game = $_POST;
-        // $game['user-id'] = '1';
-
-        $this->load->model('games_model');  
+        $game['user-id'] = '1';
+  
         // Importa de dentro de games_model o método/função store()
         $this->games_model->store($game);
         redirect("games");
@@ -45,7 +48,6 @@ class Games extends CI_Controller {
 
     public function edit($id)
     {
-        $this->load->model("games_model");
         $data["game"] = $this->games_model->show($id);
         $data["title"] = "Games - CodeIgniter";
 
@@ -62,9 +64,14 @@ class Games extends CI_Controller {
 
     public function update($id)
     {
-        $this->load->model("games_model");
         $game = $_POST;
         $this->games_model->update($id, $game);
         redirect("games");
+    }
+
+    public function delete($id)
+    {
+        $this->games_model->destroy($id);
+        redirect('games');
     }
 }
