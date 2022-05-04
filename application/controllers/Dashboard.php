@@ -2,15 +2,27 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
+
+	public function __construct()
+    {
+        parent::__construct();
+        permission();
+        $this->load->model('games_model');
+	}
 	
 	public function index()
 	{
-		$this->load->model('games_model');
+		permission();
+
+		// $this->load->model('games_model');
 
 		$data['games'] = $this->games_model->index(); 
 		$data['title'] = "Dashboard - CodeIgniter";
 
-		// print_r($data); exit;
+		// print '<pre>';
+		// print_r($_SESSION);
+		// print '</pre>';
+		// exit;
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/nav-top', $data);
