@@ -14,8 +14,8 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		// $this->load->model('games_model');
-
-		$data['games'] = $this->games_model->index(); 
+		// Acessa a model games_model
+		$data['games'] = $this->games_model->index();
 		$data['title'] = "Dashboard - CodeIgniter";
 
 		// print '<pre>';
@@ -23,6 +23,8 @@ class Dashboard extends CI_Controller {
 		// print '</pre>';
 		// exit;
 
+		// Carrega as views em ordem, gerano a página
+		// e passando o que está em $data para a página
         $this->load->view('templates/header', $data);
         $this->load->view('templates/nav-top', $data);
 		$this->load->view('pages/dashboard', $data);
