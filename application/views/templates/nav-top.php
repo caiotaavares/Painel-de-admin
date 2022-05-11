@@ -38,13 +38,13 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url()?>perfil">
               <span data-feather="shopping-cart"></span>
-              Users
+              Perfil
             </a>
 					</li>
 					<li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="shopping-cart"></span>
-              My Games
+              Usuários
             </a>
           </li>
         </ul>
