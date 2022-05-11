@@ -7,7 +7,7 @@ class Games extends CI_Controller {
     {
         parent::__construct();
         permission();
-        $this->load->model('users_model');
+        $this->load->model('games_model');
     }
 	
     // Aba de todos os jogos
