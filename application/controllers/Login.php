@@ -9,12 +9,14 @@ class Login extends CI_Controller {
         $this->load->model('login_model');
     }
 	
+	// Pagina de login
 	public function index()
 	{
 		$data['title'] = "Login - CodeIgniter";
 		$this->load->view('pages/login', $data);
 	}
 
+	// Login
 	public function store()
 	{
 		$email = $_POST['email'];

@@ -10,6 +10,7 @@ class Games extends CI_Controller {
         $this->load->model('users_model');
     }
 	
+    // Aba de todos os jogos
 	public function index()
 	{
 		$data['games'] = $this->games_model->index(); 
@@ -24,6 +25,7 @@ class Games extends CI_Controller {
         $this->load->view('templates/js', $data);
 	}
 
+    // Cadastro de jogos
     public function new()
     {
         $data['title'] = "Games - CodeIgniter";
@@ -37,6 +39,7 @@ class Games extends CI_Controller {
         $this->load->view('templates/js', $data);
     }
 
+    // Armazenar jogos cadastrados
     public function store()
     {
         $game = $_POST;
@@ -47,6 +50,7 @@ class Games extends CI_Controller {
         redirect("games");
     }
 
+    // Editar jogos
     public function edit($id)
     {
         $data["game"] = $this->games_model->show($id);
@@ -63,6 +67,7 @@ class Games extends CI_Controller {
         $this->load->view('templates/js', $data);
     }
 
+    // Update nos jogos do banco
     public function update($id)
     {
         $game = $_POST;
@@ -70,6 +75,7 @@ class Games extends CI_Controller {
         redirect("games");
     }
 
+    // Deletar jogos do banco
     public function delete($id)
     {
         $this->games_model->destroy($id);

@@ -2,6 +2,7 @@
 
     class Login_model extends CI_Model {
 
+        // Consulta no banco o email e senha do usuário
         public function store($email, $password)
         {
             $this->db->where('email', $email);

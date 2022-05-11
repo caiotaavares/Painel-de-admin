@@ -3,6 +3,7 @@
     class Search_model extends CI_Model
     {
 
+        // Pesquisa jogos do db
         public function db_search($data) {
 
             if (empty($data)) {
