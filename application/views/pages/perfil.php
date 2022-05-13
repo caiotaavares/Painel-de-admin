@@ -9,11 +9,8 @@
 	<div class="text-center">
 		<div>
 			<!-- BUG aprender a pegar imagem do db e por aqui! -->
-			<?php if(!empty($_SESSION['logged_user']['user_avatar'])) { ?>
-				<img src="<?= $_FILES['logged_user']['user_avatar'] ?>" width="50" height="50">
-			<?php } else { ?>
-				<img src="<?= base_url()?>assets/images/user-avatar.png" width="350" height="350""/>
-			<?php } ?>
+			<img src="<?= base_url()?>assets/images/user-avatar.png" width="350" height="350""/>
+			<button href="#janela1" rel="modal">Janela modal</button>
 		</div>
 		<div>
 			<h1><?= $_SESSION['logged_user']['name'] ?></h1>
@@ -27,11 +24,11 @@
 	</div>
 </main>
 
-<script>
-	function GoDelete(id) {
-		var Myurl = `games/delete/${id}`;
-		if (confirm('Deseja realmente apagar este registro?')) {
-			window.location.href = Myurl;
-		}
-	}
-</script>
+<div class="window" id="janela1">
+    <a href="#" class="fechar">X Fechar</a>
+    <h4>Primeira janela moda</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis auctor tempus. Lorem ipsum dolor sit amet,</p>
+    <p>Morbi dui lacus, placerat eget pretium vehicula, mollis id ligula. Nulla facilisi. </p>
+</div>
+<!-- mascara para cobrir o site --> 
+<div id="mascara"></div>
