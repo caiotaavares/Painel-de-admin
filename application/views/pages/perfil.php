@@ -10,7 +10,7 @@
 		<div>
 			<!-- BUG aprender a pegar imagem do db e por aqui! -->
 			<?php if(!empty($_SESSION['logged_user']['user_avatar'])) { ?>
-				<img src="<?= $_SESSION['logged_user']['user_avatar'] ?>" width="50" height="50">
+				<img src="<?= $_FILES['logged_user']['user_avatar'] ?>" width="50" height="50">
 			<?php } else { ?>
 				<img src="<?= base_url()?>assets/images/user-avatar.png" width="350" height="350""/>
 			<?php } ?>
