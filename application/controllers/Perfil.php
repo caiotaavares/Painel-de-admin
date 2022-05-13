@@ -12,6 +12,9 @@ class Perfil extends CI_Controller {
 
 	public function index()
 	{
+
+        $data['name'] = $this->session->set_userdata('name');
+
 		$data['title'] = "Perfil - CodeIgniter";
 
         $this->load->view('templates/header', $data);

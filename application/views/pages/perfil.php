@@ -6,33 +6,24 @@
 		</div>
 	</div>
 
-	<div class="table-responsive">
-		<table class="table table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Foto</th>
-					<th>Email</th>
-					<th>País</th>
-				</tr>
-			</thead>
-			<tbody>
-            <!-- ELEMENTOS DA TABELA -->
-            <tr>
-                <td>nome do usuário</td>
-                <td>foto do usuario</td>
-                <td>email do usuario</td>
-                <td>pais do usuario</td>
-                <td>
-                    <!-- colcoar botão de editar -->
-					<a href="" class="btn btn-warning" >
-						<i class="fas fa-pencil-alt"></i>
-					</a>
-				</td>
-            </tr>
-            <!-- ELEMENTOS DA TABELA -->	
-			</tbody>
-		</table>
+	<div class="text-center">
+		<div>
+			<!-- BUG aprender a pegar imagem do db e por aqui! -->
+			<?php if(!empty($_SESSION['logged_user']['user_avatar'])) { ?>
+				<img src="<?= $_SESSION['logged_user']['user_avatar'] ?>" width="50" height="50">
+			<?php } else { ?>
+				<img src="<?= base_url()?>assets/images/user-avatar.jpg" width="350" height="350""/>
+			<?php } ?>
+		</div>
+		<div>
+			<h1><?= $_SESSION['logged_user']['name'] ?></h1>
+		</div>
+		<div>
+			<h3><?= $_SESSION['logged_user']['email'] ?></h3>
+		</div>
+		<div>
+			<h4><?= $_SESSION['logged_user']['country'] ?></h4>
+		</div>
 	</div>
 </main>
 
